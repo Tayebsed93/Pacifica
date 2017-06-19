@@ -1,0 +1,81 @@
+<ion-header>
+<!--
+  <ion-navbar no-border-bottom >
+
+
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        Univers
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Déclarations
+      </ion-segment-button>
+    </ion-segment>
+
+
+  </ion-navbar>
+  -->
+
+
+</ion-header>
+
+<ion-content style="background: url(assets/img/home_authen.png) no-repeat center;background-size:cover;" class="has-header">
+
+
+
+      <div>
+      <img src="assets/img/logo.png" style="display: block; width: 60%; height: 30%; margin-left: auto; margin-right: auto; margin-top: 10%;">
+    </div>
+    <div id="cameraTabDefaultPage-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">Bonjour PIERRE DUPONT</p>
+    </div>
+
+  <ion-list #scheduleList [hidden]="shownSessions === 0">
+        
+        <button ion-button block color="secondary" icon-left id="button" (click)="goToSessionMAP()">
+            <ion-icon name='car'></ion-icon>
+          Auto / 2 Roues
+        </button>
+        <div class="spacer" style="width: 300px; height: 6px;"></div>
+
+        <button ion-button block color="secondary" (click)="goToDeclaration()" icon-left id="buttonHab">
+            <ion-icon name='home'></ion-icon>
+          HABITATION
+        </button>
+        <div class="spacer" style="width: 300px; height: 6px;"></div>
+
+        <button ion-button block (click)="goToAccident()" icon-left id="buttonAcc">
+            <ion-icon name='ion-'></ion-icon>
+          ACCIDENTS DE LA VIE
+        </button>
+        <div class="spacer" style="width: 300px; height: 6px;"></div>
+        <button ion-button block icon-left id="buttonPro">
+            <ion-icon name='home'></ion-icon>
+          PROTECTION JURIDIQUE
+        </button>
+      <div class="spacer" style="width: 300px; height: 6px;"></div>
+        <ion-item-options>
+          <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
+            Favorite
+          </button>
+          <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
+            Remove
+          </button>
+        </ion-item-options>
+
+
+
+  </ion-list>
+
+  <ion-list-header [hidden]="shownSessions > 0">
+      Aucune déclaration en cours
+  </ion-list-header>
+
+
+
+<ion-footer>
+        <button ion-button block color="light" (click)="goToNumeroUtile()">
+          NUMERO UTILES
+        </button>
+</ion-footer>
+</ion-content>

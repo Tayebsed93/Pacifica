@@ -1,0 +1,36 @@
+
+
+<ion-content style="background: url(assets/img/home_authen.png) no-repeat center;background-size:cover;" class="has-header" overflow-scroll="false">
+	<div class="logo">
+		<img src="assets/img/logo.png" alt="Ionic logo">
+	</div>
+
+<ion-list>
+  <form #loginForm="ngForm">
+    <ion-item style = "background-color:transparent">
+      <ion-input type="text" placeholder="Caisse régionale"></ion-input>
+    </ion-item>
+	<div class="spacer" style="height: 30px;"></div>
+
+    <ion-item style = "background-color:transparent">
+      <ion-input type="text" placeholder="Identifiant"></ion-input>
+    </ion-item>
+    <div class="spacer" style="height: 70px;"></div>
+
+    <ion-item style = "background-color:transparent">
+      <ion-input type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+  </form>
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="light" (click)="onLogin(loginForm)" block>SE CONNECTER</button>
+  </div>
+
+<ion-footer>
+        <button ion-button block color="light" (click)="goToNumeroUtile()">
+          Numéros d'urgence
+        </button>
+</ion-footer>
+</ion-content>

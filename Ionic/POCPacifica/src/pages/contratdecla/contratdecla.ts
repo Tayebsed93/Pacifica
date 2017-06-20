@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Declaration } from '../declaration/declaration';
+
 
 /**
  * Generated class for the Contratdecla page.
@@ -19,6 +21,12 @@ export class Contratdecla {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Contratdecla');
+  }
+
+  goToDeclaration() {
+    // go to the session detail page
+    // and pass in the session data
+    this.navCtrl.push(Declaration);
   }
 
 }

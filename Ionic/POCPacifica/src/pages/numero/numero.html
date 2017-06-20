@@ -1,18 +1,52 @@
 <!--
   Generated template for the Numero page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>numero</ion-title>
+    <ion-title>Numéros</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+<ion-list>
+  <ion-item>
+    <ion-avatar item-right>
+      <img src="assets/img/ic_jp_appeler.png" (click)="openContact()">
+    </ion-avatar>
+    <h2>112</h2>
+    <p>Numéro d'urgence unique</p>
+  </ion-item>
+
+    <ion-item>
+    <ion-avatar item-right>
+      <img src="assets/img/ic_jp_appeler.png" (click)="openPolice()">
+    </ion-avatar>
+    <h2>17</h2>
+    <p>Police</p>
+  </ion-item>
+
+    <ion-item>
+    <ion-avatar item-right>
+      <img src="assets/img/ic_jp_appeler.png">
+    </ion-avatar>
+    <h2>15</h2>
+    <p>SAMU</p>
+  </ion-item>
+
+    <ion-item>
+    <ion-avatar item-right>
+      <img src="img/avatar-cher.png">
+    </ion-avatar>
+    <h2>114</h2>
+    <p>Malentendant</p>
+  </ion-item>
+</ion-list>
 
 </ion-content>

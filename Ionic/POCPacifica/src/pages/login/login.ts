@@ -31,7 +31,7 @@ export class Login {
     if (form.valid) {
     let loader = this.loadingCtrl.create({
       content: "Connexion...",
-      duration: 3000
+
     });
     loader.present();
     

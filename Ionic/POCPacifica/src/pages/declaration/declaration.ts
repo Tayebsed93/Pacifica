@@ -8,6 +8,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {Camera} from 'ionic-native';
 import {DomSanitizer} from '@angular/platform-browser';
 import { AlertController, App, FabContainer, ItemSliding, List, ModalController } from 'ionic-angular';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the Declaration page.
@@ -44,24 +45,26 @@ export class Declaration {
     addDeclaration() {
     console.log('Click add');
 
+         let loader = this.loadingCtrl.create({
+      content: "Envoi...",
+
+    });
+    loader.present();
+
        let opt: RequestOptions
    let myHeaders: Headers = new Headers
    myHeaders.append('Authorization', 'Bearer demo1-token');
-   myHeaders.append('Content-type', 'application/json')
+   myHeaders.append('Content-type', 'application/json');
+   myHeaders.append("Accept", 'application/json');
    
    opt = new RequestOptions({
      headers: myHeaders
     })   
    
-   this.http.post("http://authentnet.pacifica.credit-agricole.fr/frontal-authent/api/declaration",opt).subscribe (data => {
+   this.http.get("http://authentnet.pacifica.credit-agricole.fr/frontal-authent/api/declaration",opt).subscribe (data => {
      console.log("Got Data");
      console.log(data);
-         let loader = this.loadingCtrl.create({
-      content: "Envoi...",
-      duration: 3000
-    });
-    loader.present();
-    
+      loader.dismiss()
       if (loader.dismiss()) {
         this.navCtrl.push(Declaok);
       }
@@ -70,6 +73,7 @@ export class Declaration {
    
   }, error => {
     console.log("Error with Data");
+    loader.dismiss()
     this.navCtrl.push(Declako);
   });
 
